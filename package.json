@@ -1,0 +1,28 @@
+{
+  "name": "vc-app",
+  "version": "1.0.0",
+  "description": "Voice Chat App based on node.js with WebRTC",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/night0721/voicechatapp.git"
+  },
+  "keywords": [
+    "voicechat",
+    "voice",
+    "web",
+    "webrtc",
+    "express",
+    "socket",
+    "app"
+  ],
+  "author": "Night & Syntax 64",
+  "license": "GNU General Public v3.0",
+  "bugs": {
+    "url": "https://github.com/night0721/voicechatapp/issues"
+  },
+  "homepage": "https://github.com/night0721/voicechatapp#readme"
+}
