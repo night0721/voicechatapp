@@ -4,7 +4,7 @@
   "description": "Voice Chat App based on node.js with WebRTC",
   "main": "index.js",
   "scripts": {
-    "test": "npm run dev"
+    "dev": "nodemon ."
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,19 @@
   },
   "homepage": "https://github.com/night0721/voicechatapp#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "socket.io": "^4.3.2"
+    "express-session": "^1.17.2",
+    "mongoose": "^5.13.10",
+    "node-fetch": "^2.6.1",
+    "passport": "^0.5.0",
+    "passport-discord": "^0.1.4",
+    "socket.io": "^4.4.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
   }
 }

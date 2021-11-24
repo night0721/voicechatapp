@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hexachat</title>
+    <link
+      rel="icon"
+      href="https://cdn.discordapp.com/avatars/800966959268364288/a258d7a92f54b25d43db35a19b0c18af.png?size=2048"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Hexachat" />
+    <meta property="og:title" content="Hexachat" />
+    <meta
+      property="og:description"
+      content="A Chat App that can chat with friends"
+    />
+    <meta
+      property="og:image"
+      content="https://cdn.discordapp.com/avatars/800966959268364288/a258d7a92f54b25d43db35a19b0c18af.png?size=2048"
+    />
+    <script defer src="http://localhost:40/socket.io/socket.io.js"></script>
+    <script defer src="/scripts/message.js"></script>
+    <link rel="stylesheet" href="/styles/message.css" />
+  </head>
+  <body>
+    <div class="square_box box_three"></div>
+    <div class="square_box box_four"></div>
+    <p class="roomid-container" class="roomid-container">
+      Room ID: <%= roomId %>
+    </p>
+    <p id="userid-container" class="userid-container">
+      Username: <%= username %>
+    </p>
+    <p id="connected-users-container"></p>
+    <section>
+      <div
+        id="message-container"
+        style="background-color: rgba(132, 0, 255, 0.122)"
+      >
+        <div class="alert alert-simple alert-info">
+          This is the start of the channel. Start by sending a message!
+        </div>
+      </div>
+    </section>
+    <form id="send-container" action="/api/users/message" method="POST">
+      <input
+        type="text"
+        id="message-input"
+        placeholder="Send a message to Chat Room"
+        name="content"
+        spellCheck="false"
+        autoComplete="off"
+        required
+        oninput="showTyping()"
+      />
+      <input type="submit" style="display: none" />
+      <!-- <button type="submit" id="send-button">Send</button> -->
+    </form>
+  </body>
+  <script>
+    function showTyping() {
+      const username = document
+        .getElementsByClassName("userid-container")[0]
+        .innerText.slice(10);
+      const messageElement = document.createElement("div");
+      messageElement.className = "alert alert-simple alert-info";
+      messageElement.innerText = `${username} is typing...`;
+      messageContainer.append(messageElement);
+    }
+  </script>
+</html>

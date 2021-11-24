@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hexachat</title>
+    <link
+      rel="icon"
+      href="https://cdn.discordapp.com/avatars/800966959268364288/a258d7a92f54b25d43db35a19b0c18af.png?size=2048"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Hexachat" />
+    <meta property="og:title" content="Hexachat" />
+    <meta
+      property="og:description"
+      content="A Chat App that can chat with friends"
+    />
+    <meta
+      property="og:image"
+      content="https://cdn.discordapp.com/avatars/800966959268364288/a258d7a92f54b25d43db35a19b0c18af.png?size=2048"
+    />
+    <link rel="stylesheet" href="message.css" />
+    <link rel="stylesheet" href="signup.css" />
+  </head>
+  <body>
+    <div class="square_box box_three"></div>
+    <div class="square_box box_four"></div>
+    <div id="form-container">
+      <form id="create-container" action="/api/users/create" method="POST">
+        <div id="container">
+          <h1 class="title">Sign up</h1>
+          <label for="input" class="lab">Username</label>
+          <input
+            type="text"
+            id="input"
+            placeholder="Username"
+            name="username"
+            spellcheck="false"
+            autocomplete="off"
+            required
+          />
+        </div>
+        <div id="container">
+          <label for="input" class="lab">Email</label>
+          <input
+            title="Please use a correct format. Example: abc@abc.com"
+            pattern="([A-Za-z0-9][._]?)+[A-Za-z0-9]@[A-Za-z0-9]+(\.?[A-Za-z0-9]){2}\.(com?|net|org|co)+(\.[A-Za-z0-9]{2,4})?"
+            id="input"
+            placeholder="abc@abc.com"
+            name="email"
+            spellcheck="false"
+            autocomplete="off"
+            required
+          />
+        </div>
+        <div id="container">
+          <label for="input" class="lab">Password</label>
+          <input
+            type="password"
+            id="input"
+            placeholder="Password"
+            name="password"
+            spellcheck="false"
+            autocomplete="off"
+            required
+          />
+        </div>
+        <div id="discord">
+          <button>Login Through Discord</button>
+        </div>
+        <div id="registered">
+          <p class="text-already">
+            Already have an account? <a href="/login">Login</a>
+          </p>
+        </div>
+        <div id="button-container">
+          <button type="submit" id="create-button">Create</button>
+        </div>
+      </form>
+    </div>
+  </body>
+  <footer>Made by <a href="https://github.com/night0721">Night</a></footer>
+</html>
